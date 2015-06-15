@@ -1,0 +1,19 @@
+{
+  "name": "TIY-Catalog",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pcreglow/TIY-Catalog"
+  },
+  "author": "Phillip Creglow @pcreglow phillipcreglow@msn.com",
+  "license": "CC0",
+  "bugs": {
+    "url": "https://github.com/pcreglow/TIY-Catalog/issues"
+  },
+  "homepage": "https://github.com/pcreglow/TIY-Catalog"
+}
