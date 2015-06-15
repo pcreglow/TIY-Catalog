@@ -1,0 +1,30 @@
+{
+  "name": "TIY-Catalog",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "postinstall": "npm run bower:install",
+    "bower:install": "bower install --save",
+    "postbower:install": "wiredep --src src/index.html",
+    "sass": "node-sass src/scss/main.scss -o src/css/",
+    "start": "browser-sync start --server --files='src/index.html,src/css/*.css,src/js/*.js' --startPath src/index.html",
+    "build":
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pcreglow/TIY-Catalog"
+  },
+  "author": "Phillip Creglow @pcreglow phillipcreglow@msn.com",
+  "license": "CC0",
+  "bugs": {
+    "url": "https://github.com/pcreglow/TIY-Catalog/issues"
+  },
+  "homepage": "https://github.com/pcreglow/TIY-Catalog",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "browser-sync": "^2.7.10",
+    "node-sass": "^3.2.0",
+    "wiredep": "^2.2.2"
+  }
+}
