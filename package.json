@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run bower:install",
+    "bower:install": "bower install --save",
+    "postbower:install": "wiredep --src src/index.html",
+    "sass": "node-sass src/scss/main.scss -o src/css/",
+    "start": "browser-sync start --server --files='src/index.html,src/css/*.css,src/js/*.js' --startPath src/index.html",
+    "build":
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/pcreglow/TIY-Catalog/issues"
   },
-  "homepage": "https://github.com/pcreglow/TIY-Catalog"
+  "homepage": "https://github.com/pcreglow/TIY-Catalog",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "browser-sync": "^2.7.10",
+    "node-sass": "^3.2.0",
+    "wiredep": "^2.2.2"
+  }
 }
