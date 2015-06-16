@@ -24,7 +24,7 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('dist/css/'))
 });
 
-gulp.task('watch:sass', function(){
+gulp.task('watch', function(){
   gulp.watch('src/scss/*.scss', [ 'sass' ], function(){
     console.log('They changed something..');
   });
