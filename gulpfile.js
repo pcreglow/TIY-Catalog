@@ -40,6 +40,17 @@ gulp.task('clean', function(done){
   ], done);
 });
 
+/*gulp.task('browser', function(){
+ var browser = require('browser-sync');
+ browser.init({
+         server: {
+             baseDir: "src/"
+         }
+     });
+     gulp.watch('src/scss/*.scss', ['sass']);
+   gulp.watch('src/*.html').on('change', browserSync.reload);
+});*/
+
 gulp.task('build', [ 'clean', 'sass' ], function(){
   gulp.src([
     'src/*', '!src/scss'
