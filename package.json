@@ -9,7 +9,18 @@
     "postbower:install": "wiredep --src src/index.html",
     "sass": "node-sass src/scss/main.scss -o src/css/",
     "start": "browser-sync start --server --files='src/index.html,src/css/*.css,src/js/*.js' --startPath src/index.html",
-    "build":
+    "build": [
+      "cp src/index.html dist/",
+      "mkdir dist/css/",
+      "cp src/css/main.css dist/css/main.css",
+      "mkdir dist/js",
+      "cp src/js/*.js dist/js/",
+      "mkdir dist/img",
+      "cp src/img/*.{png,gif,jpe?g} dist/img",
+      "cp bower_components/**/*.min.js dist/js/vendor/",
+      "sed -e 's|bower_components/(.*\\.css)|js/vendor|' dist/*.html",
+      "cp bower_components/**/*.min.css dist/css/vendor/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -24,7 +35,11 @@
   "devDependencies": {
     "bower": "^1.4.1",
     "browser-sync": "^2.7.10",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.1",
     "node-sass": "^3.2.0",
+    "sass": "^0.5.0",
     "wiredep": "^2.2.2"
   }
 }
