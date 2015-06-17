@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
 gulp.task('serve',['sass'], function(){
   browserSync.init({
@@ -13,8 +14,6 @@ gulp.task('serve',['sass'], function(){
 
 gulp.task('sass', function(){
 
-  var sass = require('gulp-sass');
-
   gulp.src('src/scss/main.scss')
     .pipe(sass())
     .pipe(gulp.dest('src/css/'))
@@ -23,8 +22,6 @@ gulp.task('sass', function(){
     .pipe(browserSync.stream())
 
 });
-
-
 
 gulp.task('clean', function(done){
   var del = require('del');
